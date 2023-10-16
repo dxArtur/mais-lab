@@ -5,8 +5,6 @@ import React from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import classnames from "classnames"
-import AboutPage from "./pages/about/page"
-import {GiCat} from 'react-icons/gi'
 
 const NavBar = ()=>{
 
