@@ -1,14 +1,21 @@
+'use client'
+
 import Link from "next/link"
 import React from "react"
+import { usePathname } from "next/navigation"
 import Image from "next/image"
+import classnames from "classnames"
+import AboutPage from "./pages/about/page"
 import {GiCat} from 'react-icons/gi'
 
 const NavBar = ()=>{
 
+    const currentPath = usePathname()
+
     const links = [
-        {label: 'About', href:'/about'},
-        {label: 'We are', href:'/weare'},
-        {label: 'Contact', href:'/contact'},
+        {label: 'About', href:'/pages/about'},
+        {label: 'We are', href:'/pages/weare'},
+        {label: 'Contact', href:'/pages/contact'},
     ]
 
     return (
@@ -27,7 +34,11 @@ const NavBar = ()=>{
                 {links.map(link =>
                 <Link 
                     key={link.href}
-                    className="text-zinc-500 hover:text-zinc-300 transition-colors"
+                    className={classnames({
+                        'text-zinc-900' : link.href === currentPath,
+                        'text-zinc-500' : link.href !== currentPath,
+                        'hoover: text-zinc-800 transitions-colors' : true
+                    })}
                     href={link.href}>
                         {link.label}   
                 </Link>)}
