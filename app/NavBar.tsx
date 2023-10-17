@@ -20,7 +20,7 @@ const NavBar = ()=>{
         <nav className='flex space-x-6 border-b mb-5 px-5 h-14 items-center'>
             <Link href="/">
             <Image
-                src="/icon-text.svg"
+                src="/txt-logo.svg"
                 alt="mais lab logo"
                 width={100}
                 height={50}
